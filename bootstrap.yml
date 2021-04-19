@@ -1,0 +1,36 @@
+---
+
+- hosts: all
+  become: true
+  pre_tasks:
+  - name: install updates
+    tags: always
+    apt:
+      upgrade: dist
+      update_cache: yes
+    when: ansible_distribution in ["Ubuntu", "Debian"]
+
+- hosts: all
+  become: true
+  tasks:
+  - name: create ansible user
+    tags: always
+    user:
+      name: ansibleuser
+      group: root
+
+  - name: add ssh key for ansibleuser
+    tags: always
+    authorized_key:
+      user: ansibleuser
+      key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHunW5PfFpT6lz6NMnfniWiTIjgfhlnWL99CUOsUw2bh ansible"
+
+  - name: add sudoers file for ansible_user
+    tags: always
+    copy:
+      src: sudoer_ansibleuser
+      dest: /etc/sudoers.d/ansibleuser
+      owner: root
+      group: root
+      mode: 0440
+

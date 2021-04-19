@@ -1,0 +1,10 @@
+---
+
+- hosts: desktop
+  become: true
+  tasks:
+
+  - name: Execute script on node
+    script: /etc/ansible/user_config.py
+    
+ 
