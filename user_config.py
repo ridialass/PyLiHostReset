@@ -5,19 +5,20 @@ import subprocess
 import os
 import sys
 import shutil
-#import getpass
-
+import netifaces
 
 '''
-Retrieving the  hostname and the IP address
+Retrieving the IP address
 ''' 
-hostn = socket.gethostname()
-print("The current hostname is: "+ hostn)
-ip4 = socket.gethostbyname(hostn)
-print("The host IP address is: "+ ip4)
+iface = "enp0s3"
+def get_ip_address(iface):
+	ip = netifaces.ifaddresses(iface)[netifaces.AF_INET][0]['addr']
+	print("The host IP address is: "+ ip)
+	return(ip)
 '''
 Get the two last bits of IP by converting it into list
 '''
+ip4 = get_ip_address(iface)
 li = list(ip4.split("."))
 numh = li[-1]
 numd = li[2]
@@ -64,7 +65,7 @@ def get_users():
 	with open(dst, "r") as f:
 		for line in f:
 			words = users.append(line.split(":x:")[0])
-	word = "stagiare"
+	word = "stagiaire"
 	old_user = [x for x in users if x.startswith(word)]
 	if len(old_user):
 		account = old_user[0]
@@ -84,6 +85,7 @@ def add_user():
 	print("The new user created is: " + username)
 
 if __name__ == '__main__':
+	get_ip_address(iface)
 	set_hostname(numd)
 	set_hosts(new_hostname)
 	get_users()
