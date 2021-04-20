@@ -5,6 +5,6 @@
   tasks:
 
   - name: Execute script on node
-    script: /etc/ansible/user_config.py
+    script: ./user_config.py
     
  

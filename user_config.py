@@ -44,7 +44,7 @@ def set_hostname(numd):
 new_hostname = set_hostname(numd)
 
 
-def set_hosts(new_hostname):
+def set_hosts(ip4, new_hostname):
 	'''
 	Updating the /etc/hosts file
 	'''
@@ -87,6 +87,6 @@ def add_user():
 if __name__ == '__main__':
 	get_ip_address(iface)
 	set_hostname(numd)
-	set_hosts(new_hostname)
+	set_hosts(ip4, new_hostname)
 	get_users()
 	add_user()
