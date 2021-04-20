@@ -27,12 +27,12 @@ def set_hostname(numd):
 	'''
 	Updating the /etc/hosname file
 	'''
-	if(numd == "0"):
+	if(numd == "10"):
 		n_hostn = ("abeille" + numh)
 		with open("/etc/hostname", "w") as f:
 			f.write(n_hostn)
 		return n_hostn
-	elif(numd == "122"):
+	elif(numd == "20"):
 		n_hostn = ("baobab" + numh)
 		with open("/etc/hostname", "w") as f:
 			f.write(n_hostn)
