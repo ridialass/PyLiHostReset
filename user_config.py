@@ -16,7 +16,7 @@ def get_ip_address(iface):
 	print("The host IP address is: "+ ip)
 	return(ip)
 '''
-Get the two last bits of IP by converting it into list
+Get the two last octets of IP by converting it into list
 '''
 ip4 = get_ip_address(iface)
 li = list(ip4.split("."))
