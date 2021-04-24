@@ -3,6 +3,10 @@ Python-Linux-Host-Reset
 Is a python script that reset the hostname and the user on a linux (Ubuntu, Debian) host.
 
 # Use case
+See th network map:
+![Network_Map](https://user-images.githubusercontent.com/7754646/115961015-d0721b00-a514-11eb-82f1-7c857aed517d.JPG)
+
+
 Pulling the IP addres of the host to know its localization (In which lan it belongs)
 Fos example:
 the network "Abeille" is 192.168.10.0/24 and "Baobab" has the network 192.168.20.0/24
