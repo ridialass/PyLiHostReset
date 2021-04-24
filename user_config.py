@@ -32,7 +32,7 @@ def set_hostname(numd):
 			f.write(n_hostn)
 		return n_hostn
 	elif(numd == "20"):
-		n_hostn = ("client" + numh)
+		n_hostn = ("baobab" + numh)
 		with open("/etc/hostname", "w") as f:
 			f.write(n_hostn)
 		return n_hostn
