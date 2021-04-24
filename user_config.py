@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-import socket
 import subprocess
 import os
 import sys
@@ -33,7 +32,7 @@ def set_hostname(numd):
 			f.write(n_hostn)
 		return n_hostn
 	elif(numd == "20"):
-		n_hostn = ("baobab" + numh)
+		n_hostn = ("client" + numh)
 		with open("/etc/hostname", "w") as f:
 			f.write(n_hostn)
 		return n_hostn
