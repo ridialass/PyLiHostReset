@@ -79,7 +79,7 @@ def add_user():
 	Creating a user with default password
 	'''
 	username = ("stagiaire" + numh)
-	password = ("Password")
+	password = "Password"
 	subprocess.run(['useradd', '-mp', password, username])
 	print("The new user created is: " + username)
 
